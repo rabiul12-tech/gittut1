@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | ProFix RepairRight Services</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #1a73e8;
+        --primary-dark: #0d47a1;
+        --secondary: #f8f9fa;
+        --accent: #ff9800;
+        --text: #202124;
+        --text-light: #5f6368;
+        --white: #ffffff;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        color: var(--text);
+        line-height: 1.6;
+        background-color: var(--white);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 20px;
+        color: var(--primary-dark);
+        line-height: 1.3;
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: var(--text-light);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-accent {
+        background-color: var(--accent);
+      }
+
+      .btn-accent:hover {
+        background-color: #e68900;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3")
+            center/cover no-repeat;
+        color: var(--white);
+      }
+
+      .hero-content {
+        max-width: 800px;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        color: var(--white);
+        margin-bottom: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      /* About Company Section */
+      .about-company {
+        background-color: var(--white);
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: var(--transition);
+      }
+
+      .about-image img:hover {
+        transform: scale(1.03);
+      }
+
+      .values-list {
+        margin: 25px 0;
+        list-style-type: none;
+      }
+
+      .values-list li {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .values-list li:before {
+        content: "✓";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      .progress-bars {
+        margin-top: 40px;
+      }
+
+      .progress-item {
+        margin-bottom: 25px;
+      }
+
+      .progress-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .progress-bar {
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background-color: var(--primary);
+        border-radius: 5px;
+      }
+
+      .whatsapp-card {
+        background-color: #25d366;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .whatsapp-card i {
+        font-size: 2.5rem;
+      }
+
+      /* Promotional Banner */
+      .promo-banner {
+        background-color: var(--primary);
+        color: var(--white);
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .promo-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .promo-banner h2 {
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+
+      /* Features Section */
+      .features {
+        background-color: var(--secondary);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background-color: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      /* Stats Section */
+      .stats {
+        background-color: var(--white);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+      }
+
+      .stat-circle {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+      }
+
+      .circle-bg {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circle-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .stat-title {
+        text-align: center;
+        font-weight: 600;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: var(--secondary);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .service-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .service-item:hover {
+        transform: translateY(-3px);
+      }
+
+      .service-icon {
+        font-size: 1.5rem;
+        color: var(--primary);
+        min-width: 30px;
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        background-color: var(--primary);
+        color: var(--white);
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .newsletter h2 {
+        color: var(--white);
+      }
+
+      .newsletter-form {
+        max-width: 500px;
+        margin: 30px auto 0;
+        display: flex;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        font-size: 1rem;
+      }
+
+      .newsletter-btn {
+        padding: 0 25px;
+        background-color: var(--accent);
+        color: var(--white);
+        border: none;
+        border-radius: 0 4px 4px 0;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #0d47a1;
+        color: var(--white);
+        padding: 60px 0 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+        color: var(--white);
+        margin-bottom: 25px;
+        font-size: 1.3rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+        padding-left: 5px;
+      }
+
+      .contact-info {
+        list-style: none;
+      }
+
+      .contact-info li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .contact-info i {
+        margin-top: 5px;
+      }
+
+      .whatsapp-cta {
+        background-color: #25d366;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+
+        .newsletter-btn {
+          border-radius: 4px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>About</h1>
+      </div>
+    </section>
+
+    <!-- About Company Section -->
+    <section class="about-company">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>15 years of RepairRight Service</h2>
+            <h3>At ProFix RepairRight, we focus on 3 core aspects</h3>
+            <ul class="values-list">
+              <li>
+                Problem-solving: We find solutions to your home repair
+                challenges
+              </li>
+              <li>
+                Reliable ownership: We take complete responsibility for every
+                project
+              </li>
+              <li>Excellent workmanship: We deliver quality that lasts</li>
+            </ul>
+
+            <div class="progress-bars">
+              <div class="progress-item">
+                <div class="progress-title">
+                  <span>RepairRight Service</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-title">
+                  <span>Excellent Communication</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-title">
+                  <span>Standard of Workmanship</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-title">
+                  <span>A big smile</span>
+                  <span>100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="whatsapp-card">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <h3>Chat with us on WhatsApp</h3>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3"
+              alt="RepairRight at work"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner">
+      <div class="container promo-content">
+        <h2>
+          Purchase our customised T-shirt – Made with Quality Ice Silk Cotton
+          for Maximum Comfort!
+        </h2>
+        <a href="#quote" class="btn btn-accent">Virtual Quote</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Promise</h2>
+          <p>We guarantee quality service with every repair</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Fast and reliable service</h3>
+            <p>
+              We arrive on time and complete projects efficiently without
+              compromising quality.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <h3>Affordable Pricing</h3>
+            <p>
+              Quality service doesn't have to break the bank. We offer
+              competitive, transparent pricing.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Qualified Team</h3>
+            <p>
+              Our handymen are experienced, background-checked, and fully
+              insured for your peace of mind.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>1 Year Warranty</h3>
+            <p>
+              All our work comes with a 1-year warranty because we stand behind
+              our quality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-circle">
+              <div class="circle-bg">
+                <span class="circle-value">100%</span>
+              </div>
+            </div>
+            <h3 class="stat-title">Project Completed on Time</h3>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-circle">
+              <div class="circle-bg">
+                <span class="circle-value">100%</span>
+              </div>
+            </div>
+            <h3 class="stat-title">Satisfied Clients</h3>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-circle">
+              <div class="circle-bg">
+                <span class="circle-value">100%</span>
+              </div>
+            </div>
+            <h3 class="stat-title">Expert Worker</h3>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-circle">
+              <div class="circle-bg">
+                <span class="circle-value">100%</span>
+              </div>
+            </div>
+            <h3 class="stat-title">Official Guarantee</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Service Offerings</h2>
+          <p>
+            Comprehensive RepairRight services for all your home repair needs
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <span>Electrical works</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-border-style"></i>
+            </div>
+            <span>Flooring works</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-tree"></i>
+            </div>
+            <span>Wood works</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-couch"></i>
+            </div>
+            <span>Furniture assembly</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-faucet"></i>
+            </div>
+            <span>Plumbing</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-trash-alt"></i>
+            </div>
+            <span>Disposal service</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-door-open"></i>
+            </div>
+            <span>Door Repair</span>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <span>Marble floor polishing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Stay Updated with Our Services</h2>
+        <p>
+          Subscribe to our newsletter for home maintenance tips and exclusive
+          offers
+        </p>
+
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Enter your email address"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>ProFix RepairRight</h3>
+            <p>
+              With over 15 years of experience, we provide reliable, quality
+              RepairRight services for residential and commercial properties.
+              Your satisfaction is our priority.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 RepairRight Street, Repairville, HN 54321</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@profixRepairRight.com</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span
+                  >Mon-Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 4:00 PM</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="whatsapp-cta">
+          <h3>Need immediate assistance?</h3>
+          <a href="#" class="btn">Call Us Today</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 ProFix RepairRight Services. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
